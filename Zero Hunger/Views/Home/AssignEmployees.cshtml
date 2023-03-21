@@ -1,0 +1,24 @@
+﻿
+@{
+    ViewBag.Title = "AssignEmployees";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Assign Employee</h2>
+
+<table class="table table-bordered">
+    <tr>
+        <th>Name</th>
+        <th>Phone</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Name</td>
+            <td>@item.Phone</td>
+            <td>
+                <a class="btn btn-success" href="Assign/@item.Id">Assign</a>
+            </td>
+        </tr>
+    }
+</table>

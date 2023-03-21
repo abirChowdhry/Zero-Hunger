@@ -1,0 +1,31 @@
+﻿
+@{
+    ViewBag.Title = "Employee";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Employee Register</h2>
+
+
+@if (TempData["Msg"] != null)
+{
+    <p class="alert @TempData["Color"]">@TempData["Msg"]</p>
+}
+
+
+@Html.ValidationSummary()
+
+<form action="" method="post">
+
+    Employee Name: <input type="text" name="Name" placeholder="Name" value="@(Model == null ? "" : Model.Name)" class="form-control" />
+    <span class="text-danger">@Html.ValidationMessage("Employee Name Required")</span>
+
+    <br>
+    Phone: <input type="text" name="Phone" placeholder="Phone Number" value="@(Model == null ? "" : Model.Phone)" class="form-control" />
+    <span class="text-danger">@Html.ValidationMessage("Phone Number Required")</span>
+
+
+
+    <br><br>
+    <input type="submit" value="Register" class="btn btn-success" />
+</form>

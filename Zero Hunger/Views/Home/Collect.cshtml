@@ -1,0 +1,37 @@
+﻿
+@{
+    ViewBag.Title = "Collect";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Collect Request</h2>
+
+@if (TempData["Msg"] != null)
+{
+    <p class="alert @TempData["Color"]">@TempData["Msg"]</p>
+}
+
+
+@Html.ValidationSummary()
+
+<form action="" method="post">
+
+    Restaurant Name: <input type="text" name="RestaurantName" placeholder="Restaurant Name" value="@(Model == null ? "" : Model.RestaurantName)" class="form-control" />
+    <span class="text-danger">@Html.ValidationMessage("Restaurant Name Required")</span>
+
+    <br>
+    Food Item: <input type="text" name="Item" placeholder="Food Item" value="@(Model == null ? "" : Model.Item)" class="form-control" />
+    <span class="text-danger">@Html.ValidationMessage("Food Items Required")</span>
+
+    <br>
+    Food Quantity: <input type="text" name="Quantity" placeholder="Food Quantity" value="@(Model == null ? "" : Model.Quantity)" class="form-control" />
+    <span class="text-danger">@Html.ValidationMessage("Food Item Qauntity Required")</span>
+
+    <br>
+    Preservation Time: <input type="text" name="Preservation_time" placeholder="Preservation Time" value="@(Model == null ? "" : Model.Preservation_time)" { get; set; }
+                              )" class="form-control" />
+    <span class="text-danger">@Html.ValidationMessage("Preservation Time Required")</span>
+
+    <br><br>
+    <input type="submit" value="Request Collect" class="btn btn-success" />
+</form>

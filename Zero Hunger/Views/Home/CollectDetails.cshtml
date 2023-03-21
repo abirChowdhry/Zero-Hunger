@@ -1,0 +1,28 @@
+﻿
+@{
+    ViewBag.Title = "CollectDetails";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Collect Details</h2>
+
+<table class="table table-bordered">
+    <tr>
+        <th>Restaurant Name</th>
+        <th>Item</th>
+        <th>Quantity</th>
+        <th>Preservation Time</th>
+        <th>Employee</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.RestaurantName</td>
+            <td>@item.Item</td>
+            <td>@item.Quantity</td>
+            <td>@item.Preservation_time</td>
+            <td>@item.EmployeeName</td>
+        </tr>
+    }
+</table>
+

@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewBag.Title = "Collection";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Collet Requestes</h2>
+
+<table class="table table-bordered">
+    <tr>
+        <th>Restaurant Name</th>
+        <th>Item</th>
+        <th>Quantity</th>
+        <th>Preservation Time</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.RestaurantName</td>
+            <td>@item.Item</td>
+            <td>@item.Quantity</td>
+            <td>@item.Preservation_time</td>
+            <td>
+                <a class="btn btn-success" href="AssignEmployee/@item.Id">Assign Employee</a>
+            </td>
+        </tr>
+    }
+</table>
+

@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewBag.Title = "MakeActive";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Employee Details</h2>
+
+@Html.ValidationSummary()
+
+<form action="" method="post">
+
+    <input type="hidden" name="Id" value="@Model.Id" class="form-control" placeholder="Id" readonly/>
+
+    Employee Name: <input type="text" name="Name" value="@Model.Name" class="form-control" placeholder="Name" readonly />
+
+    <br>
+    Phone: <input type="text" name="Phone" value="@Model.Phone" class="form-control" placeholder="Phone" readonly />
+
+
+    <br><br>
+    <input type="submit" value="Make Active" class="btn btn-success" />
+</form>
